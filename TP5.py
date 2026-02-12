@@ -12,9 +12,24 @@ class MyGame(arcade.Window):
 
 def main():
     arcade.open_window(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE)
-    arcade.set_background_color(arcade.color.PALE_BLUE)
+    arcade.set_background_color(arcade.color.SKY_BLUE)
 
     arcade.start_render()
+
+    arcade.draw_lrbt_rectangle_filled(0, SCREEN_WIDTH, 0, SCREEN_HEIGHT / 3.5, arcade.color.DARK_GREEN)
+    arcade.draw_circle_filled(200, 230, 10, arcade.color.BONE)
+    arcade.draw_lrbt_rectangle_filled(190, 210, SCREEN_HEIGHT / 3.5, 220, arcade.color.RUBY_RED)
+    arcade.draw_lrbt_rectangle_filled(210, 235, 200, 210, arcade.color.RUBY_RED)
+    arcade.draw_lrbt_rectangle_filled(170, 190, 200, 210, arcade.color.DARK_RED)
+
+    arcade.draw_line(210, 235, 180, 205, arcade.color.WHITE, 5)
+    arcade.draw_line(210, 175, 180, 205, arcade.color.WHITE, 5)
+    arcade.draw_arc_outline(210, 205, 50, 60, arcade.color.DARK_BROWN,
+                            270, 450, 10)
+
+    arcade.draw_circle_filled(600, 230, 10, arcade.color.BONE)
+    arcade.draw_lrbt_rectangle_filled(590, 610, SCREEN_HEIGHT / 3.5, 220, arcade.color.PURPLE)
+
     arcade.finish_render()
     arcade.run()
 
@@ -24,4 +39,3 @@ def on_draw():
 
 
 main()
-on_draw()

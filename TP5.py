@@ -1,6 +1,13 @@
 import arcade
 import random
 
+""" 
+Nom: Micah Wong
+Gr: 406
+Ce code dessine un archer tirant une flèche sur une autre personne à une personne armée d'une épée et d'un bouclier
+dans la nuit
+"""
+
 screen_width = 800
 screen_height = 600
 star = 25

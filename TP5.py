@@ -14,16 +14,7 @@ star = 25
 window_title = "Arcade?"
 
 
-class MyGame(arcade.Window):
-    def __init__(self, width, height, title):
-        super().__init__(width, height, title)
-
-
-def main():
-    arcade.open_window(screen_width, screen_height, window_title)
-    arcade.set_background_color(arcade.color.MIDNIGHT_BLUE)
-
-    arcade.start_render()
+def background():
 
     # BACKGROUND
     stars = []
@@ -36,6 +27,9 @@ def main():
     arcade.draw_lrbt_rectangle_filled(0, screen_width, 0, screen_height / 3.5, arcade.color.DARK_GREEN)
     arcade.draw_circle_filled(150, 500, 50, arcade.color.SILVER_LAKE_BLUE)
     arcade.draw_circle_filled(180, 500, 48, arcade.color.MIDNIGHT_BLUE)
+
+
+def archer():
 
     # Rouge personne
     arcade.draw_circle_filled(200, 230, 10, arcade.color.BONE)
@@ -58,6 +52,8 @@ def main():
     arcade.draw_line(270, 205, 390, 205, arcade.color.WHITE_SMOKE, 1)
     arcade.draw_line(300, 200, 360, 200, arcade.color.WHITE_SMOKE, 1)
 
+
+def swordsman():
     # Mauve personne
     arcade.draw_circle_filled(600, 230, 10, arcade.color.BONE)
     arcade.draw_lrbt_rectangle_filled(590, 610, screen_height / 3.5, 220, arcade.color.PURPLE)
@@ -71,9 +67,23 @@ def main():
     points = [(634, 199), (655, 235), (663, 240), (665, 230), (640, 194)]
     arcade.draw_polygon_filled(points, arcade.color.AERO_BLUE)
 
+
+def text():
     # Text
     arrow_sound = arcade.Text("fwip!", 260, 215, arcade.color.WHITE_SMOKE, 10, italic=True)
     arrow_sound.draw()
+
+
+def main():
+    arcade.open_window(screen_width, screen_height, window_title)
+    arcade.set_background_color(arcade.color.MIDNIGHT_BLUE)
+
+    arcade.start_render()
+
+    background()
+    archer()
+    swordsman()
+    text()
 
     arcade.finish_render()
     arcade.run()
